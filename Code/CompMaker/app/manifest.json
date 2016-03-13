@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Component Maker",
+  "description": "A tool to help developers to create UI components.",
+  "version": "0.0.1",
+  "devtools_page": "devtools.html",
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "js": [ "content_script.js" ]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": [
+    "*"
+  ],
+  "permissions": [
+    "file:///*",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
